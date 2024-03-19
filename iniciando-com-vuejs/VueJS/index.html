@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./vue.js"></script>
     <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
@@ -20,6 +25,15 @@
       {{ subtrair() }} <br />
       {{ multiplicar() }} <br />
       {{ dividir() }} <br />
+      <hr />
+      <a v-bind:href="site">Site</a>
+      <p v-bind:class="cor">Entendendo diretivas v-bind</p>
+      <input
+        type="text"
+        v-bind:placeholder="instrucaoDePreenchimento"
+        v-bind:value="valor"
+      />
+      <input type="checkbox" v-bind:checked="check" />
     </div>
     <script>
       options = {
@@ -43,10 +57,17 @@
               { nome: "Banco de dados relacionais", cargaHoraria: "40 horas" },
             ],
           },
+          n1: 10,
+          n2: 5,
+          site: "https://www.google.com.br",
+          cor: "red",
+          instrucaoDePreenchimento: "Placeholder - Diretiva v-bind",
+          valor: "Entendendo diretiva v-bind",
+          check: false,
         }, // irá guardar as variáveis/atributos reativos
         methods: {
           somar: function somar() {
-            return 4 + 2;
+            return this.n1 + this.n2;
           },
           subtrair: function () {
             return 4 - 2;
