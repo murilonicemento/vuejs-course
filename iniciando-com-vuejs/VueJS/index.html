@@ -10,6 +10,12 @@
       .red {
         color: red;
       }
+      .blue {
+        background-color: blue;
+      }
+      .green {
+        background-color: green;
+      }
     </style>
   </head>
   <body>
@@ -27,13 +33,16 @@
       {{ dividir() }} <br />
       <hr />
       <a v-bind:href="site">Site</a>
-      <p v-bind:class="cor">Entendendo diretivas v-bind</p>
+      <p :class="cor">Entendendo diretivas v-bind</p>
       <input
         type="text"
         v-bind:placeholder="instrucaoDePreenchimento"
         v-bind:value="valor"
       />
       <input type="checkbox" v-bind:checked="check" />
+      <hr />
+      {{ message.length }}
+      <input type="text" :value="2 + 2" :class="teste ? 'green' : estilo" />
     </div>
     <script>
       options = {
@@ -64,6 +73,9 @@
           instrucaoDePreenchimento: "Placeholder - Diretiva v-bind",
           valor: "Entendendo diretiva v-bind",
           check: false,
+          message: "Expressão",
+          estilo: "blue",
+          teste: false,
         }, // irá guardar as variáveis/atributos reativos
         methods: {
           somar: function somar() {
