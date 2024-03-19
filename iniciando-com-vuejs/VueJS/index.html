@@ -8,11 +8,37 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="app">{{ mensagem }}</div>
+    <div id="app">
+      {{ mensagem }} <br />
+      Valor Total: {{ valorTotal }} <br />
+      Logado: {{ logado }} <br />
+      Hobbie: {{ hobbies[0] }} <br />
+      Perfil: {{ perfil.nome }} <br />
+      Curso: {{ perfil.cursos[0].nome }} <br />
+    </div>
     <script>
       options = {
         el: "#app",
-        data: { mensagem: "Primeiro template controlado pelo VueJS" }, // irá guardar as variáveis/atributos reativos
+        data: {
+          mensagem: "Primeiro template controlado pelo VueJS",
+          valorTotal: 150.8,
+          logado: false,
+          hobbies: [
+            "Dormir",
+            "Colecionar Video Games Antigos",
+            "Correr",
+            "Trilhas",
+          ],
+          perfil: {
+            nome: "Murilo Nascimento",
+            site: "murilo.net.br",
+            idade: 20,
+            cursos: [
+              { nome: "Laravel", cargaHoraria: "50 horas" },
+              { nome: "Banco de dados relacionais", cargaHoraria: "40 horas" },
+            ],
+          },
+        }, // irá guardar as variáveis/atributos reativos
       };
       const vm = new Vue(options); // vm = ViewModel
       console.log(vm);
