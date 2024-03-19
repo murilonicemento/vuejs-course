@@ -15,6 +15,11 @@
       Hobbie: {{ hobbies[0] }} <br />
       Perfil: {{ perfil.nome }} <br />
       Curso: {{ perfil.cursos[0].nome }} <br />
+      <hr />
+      {{ somar() }} <br />
+      {{ subtrair() }} <br />
+      {{ multiplicar() }} <br />
+      {{ dividir() }} <br />
     </div>
     <script>
       options = {
@@ -39,9 +44,22 @@
             ],
           },
         }, // irá guardar as variáveis/atributos reativos
+        methods: {
+          somar: function somar() {
+            return 4 + 2;
+          },
+          subtrair: function () {
+            return 4 - 2;
+          },
+          multiplicar: () => {
+            return 4 * 2;
+          },
+          dividir() {
+            return 4 / 2;
+          },
+        },
       };
       const vm = new Vue(options); // vm = ViewModel
-      console.log(vm);
     </script>
   </body>
 </html>
