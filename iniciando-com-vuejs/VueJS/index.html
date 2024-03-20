@@ -43,6 +43,9 @@
       <hr />
       {{ message.length }}
       <input type="text" :value="2 + 2" :class="teste ? 'green' : estilo" />
+      <hr />
+      <input type="text" @keyup="imprimirTexto()" />
+      <button v-on:click="mensagemAlerta()">Botão</button>
     </div>
     <script>
       options = {
@@ -89,6 +92,12 @@
           },
           dividir() {
             return 4 / 2;
+          },
+          imprimirTexto() {
+            console.log("Teste");
+          },
+          mensagemAlerta() {
+            alert("Mensagem de alerta");
           },
         },
       };
