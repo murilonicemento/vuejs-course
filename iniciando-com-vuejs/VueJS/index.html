@@ -44,7 +44,7 @@
       {{ message.length }}
       <input type="text" :value="2 + 2" :class="teste ? 'green' : estilo" />
       <hr />
-      <input type="text" @keyup="imprimirTexto()" />
+      <input type="text" @keyup="imprimirTexto('Enviando parâmetro', 5, xyz)" />
       <button v-on:click="mensagemAlerta()">Botão</button>
     </div>
     <script>
@@ -79,6 +79,7 @@
           message: "Expressão",
           estilo: "blue",
           teste: false,
+          xyz: true,
         }, // irá guardar as variáveis/atributos reativos
         methods: {
           somar: function somar() {
@@ -93,8 +94,8 @@
           dividir() {
             return 4 / 2;
           },
-          imprimirTexto() {
-            console.log("Teste");
+          imprimirTexto(t, n, xyz) {
+            console.log(t, n, xyz);
           },
           mensagemAlerta() {
             alert("Mensagem de alerta");
