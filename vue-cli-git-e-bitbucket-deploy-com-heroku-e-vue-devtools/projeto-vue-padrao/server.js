@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 
-// responder a requisições feitas para o servidor web por meio da rota get
+app.use(express.static(__dirname + "/dist/"));
 
-app.get("/", function (req, resp) {
-    resp.send("Olá, eu sou um servidor web em Node com Express");
+// responder a requisições feitas para o servidor web por meio da rota get
+app.get("/", function (req, res) {
+    res.sendFile(__dirname + "/dist/index.html");
 });
 
 app.listen(3000, function () {
