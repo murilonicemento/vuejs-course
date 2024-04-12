@@ -1,13 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }} - {{ variavel }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
+    <p>Link da API: {{ url_api }}</p>
+    <p>Modo: {{ modo }}</p>
+    <p>Token: {{ token }}</p>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li>
@@ -91,6 +87,9 @@ export default {
   data: () => {
     return {
       variavel: process.env.VUE_APP_MINHA_VARIAVEL_DE_AMBIENTE,
+      url_api: process.env.VUE_APP_API_URL,
+      modo: process.env.VUE_APP_MODO,
+      token: process.env.VUE_APP_TOKEN,
     };
   },
   name: "HelloWorld",
