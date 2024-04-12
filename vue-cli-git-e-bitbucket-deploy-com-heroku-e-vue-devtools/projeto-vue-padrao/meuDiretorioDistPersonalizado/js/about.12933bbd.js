@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkprojeto_vue_padrao"]=self["webpackChunkprojeto_vue_padrao"]||[]).push([[594],{603:function(u,a,e){e.r(a),e.d(a,{default:function(){return d}});var n=e(6768);const r={class:"about"},t=(0,n.Lk)("h1",null,"This is an about page",-1),o=[t];function s(u,a){return(0,n.uX)(),(0,n.CE)("div",r,o)}var c=e(1241);const p={},i=(0,c.A)(p,[["render",s]]);var d=i}}]);
+//# sourceMappingURL=about.12933bbd.js.map

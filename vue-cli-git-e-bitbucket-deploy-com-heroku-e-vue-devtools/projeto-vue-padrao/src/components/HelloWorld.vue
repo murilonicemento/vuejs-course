@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 style="color: red">{{ msg }} - {{ variavel }}</h1>
+    <h1>{{ msg }} - {{ variavel }}</h1>
     <p>Link da API: {{ url_api }}</p>
     <p>Modo: {{ modo }}</p>
     <p>Token: {{ token }}</p>
